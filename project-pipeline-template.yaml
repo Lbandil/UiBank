@@ -94,7 +94,7 @@ stages:
               folderName: Shared
               testReportDestination: $(Pipeline.Workspace)\drop\
   - stage: DeployToProd
-    condition: and(succeeded('Build'), eq(variables['Build.SourceBranchName'], 'Master'))
+    condition: and(succeeded('Build'), startsWith(variables['Build.SourceBranchName'], 'Master'))
     jobs:
       - deployment: DeployToProdJob
         pool:
