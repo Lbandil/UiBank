@@ -24,8 +24,8 @@ trigger:
   # Define what branches trigger the pipeline
   branches:
     include:
-      - Master    # Will push to Prod after approval
       - Dev # Will push to DEV without approval
+      - Master    # Will push to Prod after approval
       - release*  # Will push to UAT without approval
   # Define what paths to include for building this pipeline. Normally, you should add the same projectPath as above,
   # so that any change to the project will trigger the pipeline, but it will ignore any changes to other projects.
