@@ -1,0 +1,117 @@
+---
+parameters:
+  - name: projectPath
+    default: .
+    type: string
+  - name: folderName
+    default: Default
+    type: string
+  - name: versioningStrategy
+    default: CurrentVersion
+    type: string
+  - name: environments
+    default: ""
+    type: string
+  - name: testSet
+    default: UiBankTest
+    type: string
+stages:
+  - stage: Build
+    jobs:
+      - job: BuildJob
+        pool: Selfhosted
+        workspace:
+          clean: all
+        steps:
+          - script: "echo project path: ${{ parameters.projectPath }}, folder name: ${{
+              parameters.folderName }}, versioning strategy: ${{
+              parameters.versioningStrategy }}, environments: ${{
+              parameters.environments }}"
+            displayName: Log parameters
+          - task: UiPathInstallPlatform@4
+          - task: UseDotNet@2
+            inputs:
+              packageType: 'sdk'
+              version: 
+              includePreviewVersions: true
+
+          - task: UiPathPack@4
+            inputs:
+              versionType: ${{ parameters.versioningStrategy }}
+              projectJsonPath: $(Build.SourcesDirectory)\${{ parameters.projectPath }}
+              orchestratorConnection: UiPath2
+              outputPath: $(Build.ArtifactStagingDirectory)\Output
+          - publish: $(Build.ArtifactStagingDirectory)\Output
+            artifact: drop
+  - stage: DeployToTest
+    condition: and(succeeded('Build'),
+      startsWith(variables['Build.SourceBranchName'], 'Dev'))
+    jobs:
+      - job: DeployToTestJob
+        pool: Selfhosted
+        workspace:
+          clean: all
+        steps:
+          - download: current
+            artifact: drop
+          - task: UiPathInstallPlatform@4
+          - task: UseDotNet@2
+            inputs:
+              packageType: 'sdk'
+              version: 
+              includePreviewVersions: true
+          - task: UiPathDeploy@4
+            inputs:
+              orchestratorConnection: UiPath2
+              packagesPath: $(Pipeline.Workspace)\drop
+              folderName: Shared
+              environments: ${{ parameters.environments }}
+  - stage: Assest
+    displayName: Create Assests
+    jobs:
+      - job: CreateAssests
+        pool: Selfhosted
+        steps:
+          - task: UiPathAssets@4
+            inputs:
+              orchestratorConnection: UiPath2
+              folderName: Shared
+              assetActionType: Deploy
+              csvFile: $(Build.SourcesDirectory)\Data\Assests.CSV
+  - stage: Testing
+    displayName: Test After Publish
+    dependsOn: DeployToTest
+    condition: succeeded()
+    jobs:
+      - job: TestDEV
+        pool: Selfhosted
+        steps:
+          - task: UiPathTest@4
+            inputs:
+              testTarget: TestSet
+              orchestratorConnection: UiPath2
+              testSet: ${{ parameters.testSet }}
+              folderName: Shared
+              testReportDestination: $(Pipeline.Workspace)\drop\
+  - stage: DeployToProd
+    condition: and(succeeded('Build'), eq(variables['Build.SourceBranchName'], 'Master'))
+    jobs:
+      - deployment: DeployToProdJob
+        pool:
+          vmImage: windows-latest
+        workspace:
+          clean: all
+        environment: Production
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - download: current
+                  artifact: drop
+                - task: UiPathInstallPlatform@4
+                - task: UiPathDeploy@4
+                  inputs:
+                    orchestratorConnection: UiPath2
+                    packagesPath: $(Pipeline.Workspace)\drop
+                    folderName: ${{ parameters.folderName }}
+                    environments: ${{ parameters.environments }}
