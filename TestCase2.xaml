@@ -101,7 +101,7 @@
       </Variable>
       <Variable x:TypeArguments="x:Int32" Name="LoanAmount">
         <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="250000" />
+          <Literal x:TypeArguments="x:Int32" Value="25000" />
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:String" Name="Email">
