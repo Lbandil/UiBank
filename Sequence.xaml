@@ -25,7 +25,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>843.3333333333334,2904.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1149.3333333333333,3092</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,19 +121,19 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="546,2840" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="546,3027.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: UiBank" sap:VirtualizedContainerService.HintSize="484,2729.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="f8ac5859-e800-4fb5-b274-7859f34beecb" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: UiBank" sap:VirtualizedContainerService.HintSize="484,2916.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="f8ac5859-e800-4fb5-b274-7859f34beecb" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2510" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2697.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="Text" />
             </Sequence.Variables>
@@ -142,6 +142,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Log message&quot;]" />
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Products'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f8ac5859-e800-4fb5-b274-7859f34beecb" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://uibank.uipath.com/welcome" CvElementArea="1471, 186, 34, 36" CvTextArea="1353, 193, 121, 25" CvTextArgument="Products" CvType="ArrowButton" DesignTimeRectangle="1343, 175, 166, 65" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Products'" FullSelectorArgument="&lt;webctrl id='dropdownMenuLink' aaname='Products' /&gt;" FuzzySelectorArgument="&lt;webctrl id='dropdownMenuLink' aaname='Products' tag='A' type='' class='nav-link dropdown-toggle text-dark' check:text='Products' /&gt;" Guid="60017eb7-5253-4cf6-a351-130421589a17" InformativeScreenshot="90b7d25ec2aa0f610d5b2723a2a4b553.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UiBank' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Interactive" />
@@ -161,7 +162,7 @@
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://uibank.uipath.com/loans/apply" CvElementArea="575, 337, 768, 87" CvType="InputBox" DesignTimeRectangle="577, 339, 763, 82" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'INPUT email'" FullSelectorArgument="&lt;webctrl id='email' tag='INPUT' placeholder='*Enter email address*' /&gt;" FuzzySelectorArgument="&lt;webctrl id='email' tag='INPUT' placeholder='*Enter email address*' type='email' class='form-control uibank-input ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="63962c73-0d46-47c3-a7f8-639b3ee0cac3" InformativeScreenshot="323a5fbf8b824b9bf400747087c03220.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UiBank' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CvTextArea="574, 313, 231, 23" CvTextArgument="Email Address of Requester" CvType="Text" DesignTimeRectangle="577, 311, 228, 28" ElementType="Text" FriendlyName="'Email Address'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='uibank-label' aaname='Email Address of Requester' check:innerText='Email Address of Requester' /&gt;" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -172,7 +173,7 @@
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://uibank.uipath.com/loans/apply" CvElementArea="576, 479, 765, 85" CvType="InputBox" DesignTimeRectangle="577, 481, 763, 82" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'INPUT amount'" FullSelectorArgument="&lt;webctrl id='amount' tag='INPUT' name='amount' /&gt;" FuzzySelectorArgument="&lt;webctrl id='amount' tag='INPUT' name='amount' type='number' class='form-control uibank-input ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="9e4424c2-1b3e-4028-a8dc-9a738f56345c" InformativeScreenshot="290eac13401e061a9b2d130d14a5bd97.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UiBank' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CvTextArea="574, 456, 208, 21" CvTextArgument="Loan Amount Requested" CvType="Text" DesignTimeRectangle="577, 453, 206, 28" ElementType="Text" FriendlyName="'Loan Amount Requested'" FullSelectorArgument="&lt;webctrl aaname='Loan Amount Requested' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Loan Amount Requested' tag='LABEL' type='' class='uibank-label' check:innerText='Loan Amount Requested' /&gt;" SearchSteps="Selector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -192,7 +193,7 @@
               <uix:NSelectItem.Target>
                 <uix:TargetAnchorable BrowserURL="https://uibank.uipath.com/loans/apply" CvElementArea="573, 470, 769, 88" CvType="InputBox" DesignTimeRectangle="577, 473, 763, 82" DesignTimeScaleFactor="1.5" ElementType="DropDown" FriendlyName="'Select your loan term'" FullSelectorArgument="&lt;webctrl id='term' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='term' tag='SELECT' type='number' class='form-control uibank-input select-color ng-untouched ng-pristine ng-invalid' aaname='' /&gt;" Guid="359e55e2-6aa4-45a2-99a4-40e264ead18c" ImageBase64="" InformativeScreenshot="02901783f7528450cbb31cf3085569f9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UiBank' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CvTextArea="574, 447, 92, 18" CvTextArgument="Loan Term" CvType="Text" DesignTimeRectangle="577, 444, 88, 28" ElementType="Text" FriendlyName="'Loan Term'" FullSelectorArgument="&lt;webctrl aaname='Loan Term' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Loan Term' tag='LABEL' type='' class='uibank-label' check:innerText='Loan Term' /&gt;" SearchSteps="Selector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -203,7 +204,7 @@
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://uibank.uipath.com/loans/apply" CvElementArea="575, 762, 766, 86" CvType="InputBox" DesignTimeRectangle="577, 614, 763, 82" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'INPUT income'" FullSelectorArgument="&lt;webctrl id='income' tag='INPUT' aaname='Current Yearly Income (Before Taxes)' /&gt;" FuzzySelectorArgument="&lt;webctrl id='income' tag='INPUT' aaname='Current Yearly Income (Before Taxes)' type='number' class='form-control uibank-input ng-untouched ng-pristine ng-valid' /&gt;" Guid="1dbd182b-6a30-4c44-b1f6-caebbef056dc" InformativeScreenshot="7aec0fafaf67a6505566588c394eb407.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UiBank' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CvTextArea="574, 736, 315, 22" CvTextArgument="Current Yearly Income (Before Taxes)" CvType="Text" DesignTimeRectangle="577, 586, 313, 28" ElementType="Text" FriendlyName="'Current Yearly'" FullSelectorArgument="&lt;webctrl aaname='Current Yearly Income (Before Taxes)' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Current Yearly Income (Before Taxes)' tag='LABEL' type='' class='uibank-label' check:innerText='Current Yearly Income (Before Taxes)' /&gt;" SearchSteps="Selector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -214,7 +215,7 @@
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://uibank.uipath.com/loans/apply" CvElementArea="573, 753, 769, 87" CvType="InputBox" DesignTimeRectangle="577, 756, 763, 82" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'INPUT age'" FullSelectorArgument="&lt;webctrl id='age' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='age' tag='INPUT' type='number' class='form-control uibank-input ng-untouched ng-pristine ng-valid' aaname='Age' /&gt;" Guid="b60ee93f-21eb-44b5-9f44-7c817bea777c" InformativeScreenshot="31b1110fee1edbe6d806d3b5a697dccb.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='UiBank' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CvTextArea="574, 730, 36, 21" CvTextArgument="Age" CvType="Text" DesignTimeRectangle="577, 728, 33, 28" ElementType="Text" FriendlyName="'Age'" FullSelectorArgument="&lt;webctrl aaname='Age' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Age' tag='LABEL' type='' class='uibank-label' check:innerText='Age' /&gt;" SearchSteps="Selector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
